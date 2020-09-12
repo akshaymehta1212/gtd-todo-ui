@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-primary" disabled>TASK DETAIL !!</button>
+        <div *ngIf="taskItem">
+            
+            <div class="form-group row">
+                <label for="tasktype" class="col-sm-2 col-form-label">Task Type</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="tasktype" value={{taskItem.taskType}}>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="taskname" class="col-sm-2 col-form-label">Task Name</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="taskname" value={{taskItem.taskName}}>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="td" class="col-sm-2 col-form-label">Task Details</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="td" value={{taskItem.taskDetails}}>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="createdon" class="col-sm-2 col-form-label">Task ID</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="createdon" value={{taskItem.createdOn}}>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="taskstatus" class="col-sm-2 col-form-label">Task Status</label>
+                <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext" id="taskstatus" value={{taskItem.isDone}}>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-success" (click)="list()">Go Back To List</button>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-primary" (click)="reloadData()">Refresh</button><br>
+        <button class="btn btn-info" (click)="createTask()">Add New Task</button>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Task Type</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Created</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let taskItem of taskItems | async">
+                
+                  <td>{{taskItem.taskType}}</td>
+                  <td>{{taskItem.taskName}}</td>
+                  <td>{{taskItem.createdOn}}</td>
+                  <td>{{taskItem.isDone}}</td>
+                  <td><button (click)="deleteTask(taskItem.task_id)" class="btn btn-danger">Delete</button> |
+                      <button (click)="taskDetails(taskItem.task_id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                  </td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+</div>

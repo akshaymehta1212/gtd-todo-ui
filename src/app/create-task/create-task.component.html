@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-12">
+        <div [hidden]="submitted" >
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                  <label for="tasktype">Task Type</label>
+                  <input type="text" 
+                  class="form-control" 
+                  id="tasktype" 
+                  placeholder="Enter Task Type"
+                  name = "taskType"
+                  required [(ngModel)]="taskItem.taskType">
+                </div>
+                <div class="form-group">
+                    <label for="taskname">Task Name</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="tasknmae" 
+                    placeholder="Enter Task Name"
+                    name = "taskName"
+                    required [(ngModel)]="taskItem.taskName">
+                </div>
+                <div class="form-group">
+                    <label for="taskdetails">Task Details</label>
+                    <textarea class="form-control" 
+                    id="taskdetails" 
+                    placeholder="Enter Task Details"
+                    name = "taskDetails"
+                    required [(ngModel)]="taskItem.taskDetails"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="createdon">Date</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="cratedon" 
+                    placeholder="Enter Date"
+                    name= "createdOn"
+                    required [(ngModel)]="taskItem.createdOn">
+                </div>
+                <div class="form-group">
+                    <label for="isdone">Status</label>
+                    <input type="text" 
+                    class="form-control" 
+                    id="isdone" 
+                    placeholder="status"
+                    name="isDone"
+                    required [(ngModel)]="taskItem.isDone">
+                </div>
+
+                <button type="submit" class="btn btn-success">Create</button>
+          </form>
+        </div>
+
+        <button class="btn btn-light" (click)="goToList()">Go Back To List</button>
+    </div>
+</div>
